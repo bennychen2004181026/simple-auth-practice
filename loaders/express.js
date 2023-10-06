@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors');
+const apiRouter = require('../app/routes/v1/api')
 const config = require('../app/config/app');
 
 
@@ -19,5 +20,6 @@ module.exports = () =>{
      //global middleware
     app.use(cors());
     app.use(express.json());
+    app.use(config.api.prefix, apiRouter);
     return app;
 }

@@ -9,6 +9,6 @@ module.exports = async function () {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     });
-
+    //The mongodb.Db instance, set when the connection is opened
     return connection.connection.db;
 };
