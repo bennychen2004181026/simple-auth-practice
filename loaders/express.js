@@ -5,14 +5,14 @@ const config = require('../app/config/app');
 
 
 const startServer = () =>{
-    const express = express();
-    express.listen(config.port, err=>{
+    const application = express();
+    application.listen(config.port, err=>{
         if(err){
             process.exit(1)
         }
     })
-    console.log('server started')
-    return express;
+    console.log(`server started at port:${config.port}`)
+    return application;
 }
 
 module.exports = () =>{
