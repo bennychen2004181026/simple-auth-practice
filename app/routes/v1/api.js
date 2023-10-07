@@ -5,10 +5,11 @@ const userController = require('../../controllers/user');
 const loginController = require('../../controllers/login');
 const postController = require('../../controllers/post');
 
-router.all('*', authMiddleware.isAuth);
-
 router.post('/user',userController.store)
 router.post('/login',loginController.login)
+
+router.all('*', authMiddleware.isAuth);
+
 
 router.get('/posts',postController.index)
 router.put('/posts/:id',postController.update)

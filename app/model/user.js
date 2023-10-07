@@ -39,6 +39,7 @@ userSchema.methods.toJSON = function () {
     //"this" is the document about to be saved
     const user = this;
     const userObject = user.toObject();
+    // when displaying user it should not show the password
     delete userObject.password;
     return userObject;
 }
